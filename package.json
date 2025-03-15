@@ -15,7 +15,9 @@
     "post-dependencies": "echo post-dependencies",
     "pre-release": "grunt build",
     "post-release": "echo post-release",
-    "gh-pages": "grunt yuidoc"
+    "gh-pages": "grunt yuidoc",
+    "bmp-r": "cc-bmp -r",
+    "release": "cc-local-release"
   },
   "repository": {
     "type": "git",
@@ -52,7 +54,9 @@
       "version-prefix": "v",
       "create-branch": false,
       "create-gh-pages": true,
-      "gh-pages-dir": "doc"
+      "gh-pages-dir": "doc",
+      "npm-shrinkwrap": false,
+      "npm-update-depth": false
     }
   },
   "directories": {
