@@ -38,7 +38,9 @@ function entry(start: number, stop?: number | JpWrapOptions, options: JpWrapOpti
   
   return function(text: string): string {
     const lines = jpWrap.getLines(text).map(line => {
-      return spacesStart + line.str + spaces.slice(0, stop - line.width);
+      // Since we're in this code block, stop is guaranteed to be defined
+      const stopValue = stop as number;
+      return spacesStart + line.str + spaces.slice(0, stopValue - line.width);
     });
     
     return lines.join('\n');
